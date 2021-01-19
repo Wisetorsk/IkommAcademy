@@ -80,7 +80,7 @@ namespace EmployeeManagement
 
         public void UpdateUser()
         {
-            SetEmail();
+            SetEmail();  // Maybe better to make own "password" and "email" classes that deal with pasword change. Or include into property accessors.
             SetPassword();
         }
 
