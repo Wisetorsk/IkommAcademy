@@ -10,6 +10,7 @@ namespace IkommAcademyDag_1
             #region task1
             Header("Task 1");
             string allDates = "All registered dates\n";
+            bool end;
             int day1 = 29;
             int month1 = 2;
             int year1 = 2100;
@@ -17,7 +18,7 @@ namespace IkommAcademyDag_1
             int year3 = 2016;
             int year4 = 2021;
 
-            Console.WriteLine($"Is {year1} a leap-year?  {(IsLeapYear(year1) ? "Yes!" : "No!")}");
+            Console.WriteLine($"Is {year1} a leap-year?  {(IsLeapYear(year1) ? "Yes!" : "No!")}"); // Use for loop instead of individual statements
             Console.WriteLine($"Is {year2} a leap-year?  {(IsLeapYear(year2) ? "Yes!" : "No!")}");
             Console.WriteLine($"Is {year3} a leap-year?  {(IsLeapYear(year3) ? "Yes!" : "No!")}");
             Console.WriteLine($"Is {year4} a leap-year?  {(IsLeapYear(year4) ? "Yes!" : "No!")}");
@@ -36,7 +37,6 @@ namespace IkommAcademyDag_1
 
             #region taks3
             Header("Task 1");
-            bool end;
             do
             {
                 Console.Write("Day: ");
@@ -110,7 +110,7 @@ namespace IkommAcademyDag_1
 
         static string FormatMonth(int month)
         {
-            // Faster solution would be to define an array with all months and accessing them using array[input month - 1]
+            // "smaller" solution would be to define an array with all months and accessing them using array[input month - 1]
             switch (month)
             {
                 case 1:
