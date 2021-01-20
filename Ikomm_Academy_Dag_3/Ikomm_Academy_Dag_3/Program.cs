@@ -14,7 +14,6 @@ namespace Ikomm_Academy_Dag_3
             Console.WriteLine(ArrayTools.Stringify(output));
             Console.WriteLine(ArrayTools.Stringify(intArray));
             Console.WriteLine(ArrayTools.Stringify(ArrayTools.Range(10, -10, 2)));
-
         }
     }
 }
