@@ -19,14 +19,14 @@ namespace EmployeeManagement
         #region Constructor
         public UserProfile(string userName, string email = null, string password = "admin1234")
         {
+            UserName = userName.Replace(" ", "");
             if (email is null)
             {
-                Email = $"{userName.Replace(" ", "_")}@this_is_a_real_company.com";
+                Email = $"{UserName}@this_is_a_real_company.com";
             } else
             {
                 Email = email;
             }
-            UserName = userName;
             Password = password;
         }
 

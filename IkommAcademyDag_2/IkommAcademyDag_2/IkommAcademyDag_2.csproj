@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\IKOMM.Library\IKOMM.Library.csproj" />
+    <Reference Include="IKOMM.CustomLibrary">
+      <HintPath>..\..\IKOMM.CustomLibrary\IKOMM.CustomLibrary\bin\Debug\netstandard2.0\IKOMM.CustomLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

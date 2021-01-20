@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace IkommAcademyDag_2
 {
-    class Program
+    class ProgramDag2
     {
         static void Main(string[] args)
         {

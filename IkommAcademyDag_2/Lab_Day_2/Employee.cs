@@ -56,26 +56,30 @@ namespace EmployeeManagement
             Skills = skills;
         }
 
-        public Employee(string name, double salary, DateTime joindate)
+        public Employee(string name="Firstname Lastname", double salary=100000.0, DateTime ?joindate = null)
         {
             UserInfo = new UserProfile(name);
             EmployeeName = name;
             Salary = salary;
-            JoinDate = joindate;
+            if (joindate is null)
+            {
+                JoinDate = DateTime.Now;
+            } else
+            {
+                JoinDate = (DateTime)joindate;
+            }
         }
-        public Employee(string name, double salary)
+
+        ~Employee()
         {
-            UserInfo = new UserProfile(name);
-            EmployeeName = name;
-            Salary = salary;
-            JoinDate = DateTime.Now;
+            Console.WriteLine($"Killed eployee {this}");
         }
         #endregion
 
         #region methods
         public override string ToString()
         {
-            return $"{UserInfo.ToString()} {Salary} {JoinDate.ToShortDateString()} {GetSkills()}";
+            return $"{UserInfo} {Salary} {JoinDate.ToShortDateString()} {GetSkills()}";
         }
 
         public void UpdateUser()
@@ -112,13 +116,18 @@ namespace EmployeeManagement
 
         private bool PasswordChange()
         {
+            /* Password update method
+             * Prompts the user for the old password and then the new + confirmation.
+             * If the two new passwords do not match or the supplied old password is inncorrect, trow error and retry
+             */ 
             bool gettingInput;
             Console.Write("Please enter old password: ");
-            string oldInputPassword = null;
-            oldInputPassword = GetPasswordEntry(oldInputPassword);
+            string oldInputPassword = GetPasswordEntry();
             Console.Write("Please enter new password: ");
-            string newInputPassword = null;
-            newInputPassword = GetPasswordEntry(newInputPassword);
+            string newInputPassword = GetPasswordEntry();
+            Console.Write("Please re enter new password: ");
+            string newInputPassword2 = GetPasswordEntry();
+            if (newInputPassword != newInputPassword2) throw new Exception("The new password does not match!");
             if (!UserInfo.SetPassword(oldInputPassword, newInputPassword))
             {
                 throw new Exception($"Given old password does not match or new password is null");
@@ -132,17 +141,19 @@ namespace EmployeeManagement
             return gettingInput;
         }
 
-        private static string GetPasswordEntry(string oldInputPassword)
+        private static string GetPasswordEntry()
         {
+            string builtPassword = null;
             while (true)
             {
                 var key = System.Console.ReadKey(true);
                 if (key.Key == ConsoleKey.Enter)
                     break;
-                oldInputPassword += key.KeyChar;
+                builtPassword += key.KeyChar;
+                Console.Write('*');
             }
-
-            return oldInputPassword;
+            Console.WriteLine();
+            return builtPassword;
         }
 
         private void SetEmail()
@@ -235,6 +246,7 @@ namespace EmployeeManagement
             }*/
             int lenOfOldSkills = Skills.Length;
             Skills = Skills.Where(x => x != skillToRemove).ToArray(); //Using LINQ, too used to functional js I gues...
+            index = Skills.Length;
             return (lenOfOldSkills != Skills.Length);
         }
 

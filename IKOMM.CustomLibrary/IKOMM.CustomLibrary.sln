@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IKOMM.CustomLibrary", "IKOMM.CustomLibrary\IKOMM.CustomLibrary.csproj", "{7998F648-B511-4C17-A485-09187DB8CE1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7998F648-B511-4C17-A485-09187DB8CE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7998F648-B511-4C17-A485-09187DB8CE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7998F648-B511-4C17-A485-09187DB8CE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7998F648-B511-4C17-A485-09187DB8CE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47BA3081-7337-42CA-A321-CEF3DF21D6C9}
+	EndGlobalSection
+EndGlobal
