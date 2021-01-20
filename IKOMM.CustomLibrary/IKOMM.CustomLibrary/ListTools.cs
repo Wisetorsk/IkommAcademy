@@ -15,9 +15,14 @@ namespace IKOMM.CustomLibrary
             return outVar;
         }
 
-        public static List<int> RangeList(int lengthOfRange, int startPoint = 0, int stepLength = 0)
+        public static List<int> Range(int lengthOfRange, int startPoint = 0, int stepLength = 0)
         {
-            //return;
+            List<int> outputList = new List<int>();
+            for (int i = 0; i < lengthOfRange; i++)
+            {
+                outputList.Add(startPoint + i * stepLength);
+            }
+            return outputList;
         }
     }
 }

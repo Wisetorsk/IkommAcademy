@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using IKOMM.CustomLibrary;
 
 namespace Ikomm_Academy_Dag_3
@@ -14,6 +15,10 @@ namespace Ikomm_Academy_Dag_3
             Console.WriteLine(ArrayTools.Stringify(output));
             Console.WriteLine(ArrayTools.Stringify(intArray));
             Console.WriteLine(ArrayTools.Stringify(ArrayTools.Range(10, -10, 2)));
+            var testArrayRange = ArrayTools.Range(100);
+            Console.WriteLine(testArrayRange.Count());
+            var testListRange = ListTools.Range(100);
+            Console.WriteLine(testListRange.Count());
         }
     }
 }

@@ -72,7 +72,7 @@ namespace EmployeeManagement
 
         ~Employee()
         {
-            Console.WriteLine($"Killed eployee {this}");
+            Console.WriteLine($"Killed eployee {this.ToString()}");
         }
         #endregion
 
