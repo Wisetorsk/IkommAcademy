@@ -37,7 +37,7 @@ namespace LibrarySystem
             return false;
         }
 
-        public void ReturnItem()
+        public virtual void ReturnItem()
         {
             CurrentBorrower.ReturnedItem();
             CurrentBorrower = null;
