@@ -20,6 +20,9 @@ namespace LibrarySystem
         }; //IItem Can also be used.
             items.ToList().ForEach(Console.WriteLine);
 
+            //items[5].BorrowItemBy(testChild);
+            Console.WriteLine("Can this tiem be loaned out to: \n" + testChild);
+            Console.WriteLine(items[5].BorrowItemBy(testChild) ? "Yes, you can borrow it": "No, you are too young"); //Can test child borrow this dvd with adult classification
             Console.WriteLine(items[1]); // At this point doe date back is null since the book hasn't been loaned out yet
             items[1].BorrowItemBy(testAdult);
             Console.WriteLine(items[1].DateDueBack);
