@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibrarySystem
 {
-    interface Iitem
+    interface IItem
     {
         bool Borrowed();
         bool CanBeBorrowedBy(Member member);
-        bool BorrowItemBu(Member member);
+        bool BorrowItemBy(Member member);
         void ReturnItem();
         string ToString();
     }

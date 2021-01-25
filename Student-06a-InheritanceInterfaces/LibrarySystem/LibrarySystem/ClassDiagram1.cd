@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LibrarySystem.Item">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="LibrarySystem.Item.Book">
+        <TypeIdentifier>
+          <NewMemberFileName>Book.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="LibrarySystem.Item.DVD">
+        <TypeIdentifier>
+          <NewMemberFileName>DVD.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AABAAAQAAQAQAEAEAAAgAAAAAAAAgAAAAAAACAAAAAA=</HashCode>
+      <FileName>Item.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="9.75" Y="2" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="LibrarySystem.IItem">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAQAQAAAEAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="LibrarySystem.ItemGenre" Collapsed="true">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Genre.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="LibrarySystem.Classification" Collapsed="true">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>Genre.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

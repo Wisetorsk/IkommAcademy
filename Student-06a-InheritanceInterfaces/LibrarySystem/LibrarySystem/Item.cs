@@ -1,35 +1,52 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LibrarySystem
 {
-    public abstract class Item : Iitem
+    public abstract partial class Item : IItem
     {
         private string Title { get; set; }
         private DateTime ?DateBorrowed { get; set; } = null;
-        private Member CurrentBorrower { get; set; } = null;
+        internal Member CurrentBorrower { get; set; } = null;
+        internal abstract DateTime ?DateDueBack { get; }
+
+        public Item(string title)
+        {
+            Title = title;
+        }
 
         public bool Borrowed()
         {
-            throw new NotImplementedException();
+            return (CurrentBorrower != null);
         }
 
-        public bool BorrowItemBu(Member member)
+        public virtual bool CanBeBorrowedBy(Member member)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public bool CanBeBorrowedBy(Member member)
+        public bool BorrowItemBy(Member member)
         {
-            throw new NotImplementedException();
+            if (CurrentBorrower != null) return false; // If the item has a current borrorwer, return false.
+            if (CanBeBorrowedBy(member)) 
+            {
+                CurrentBorrower = member;
+                DateBorrowed = DateTime.Now;
+                member.BorrowedItem();
+                return true;
+            }
+            return false;
         }
 
         public void ReturnItem()
         {
-            throw new NotImplementedException();
+            CurrentBorrower.ReturnedItem();
+            CurrentBorrower = null;
+            DateBorrowed = null;
+        }
+
+        public override string ToString()
+        {
+            return $"Borrowable: {(CurrentBorrower == null ? "Yes!" : $"No, currently loaned out to {CurrentBorrower}")}\n{new string('*', Console.WindowWidth)}\n";
         }
     }
 }
