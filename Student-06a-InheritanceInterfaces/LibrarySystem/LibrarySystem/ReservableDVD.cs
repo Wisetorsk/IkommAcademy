@@ -9,7 +9,7 @@ namespace LibrarySystem
 {
     class ReservableDVD : DVD, IReservable
     {
-        public Member ReservedTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public Member[] ReservedTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public bool Reserved { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public ReservableDVD(string title, int playTime, Classification rating) : base(title, playTime, rating)
