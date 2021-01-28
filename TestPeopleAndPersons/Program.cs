@@ -11,9 +11,16 @@ namespace TestPeopleAndPersons
         static void Main(string[] args)
         {
             //Task1();
-            TestPopulation();
+            //TestPopulation();
             //TestInterpolator();
             //FizzBuzz(100);
+
+            var weights = new List<double> { .01, .1, 1, .5, .8, .3 };
+            var r = new Random();
+            var w = weights.Select(i => i * r.NextDouble()).ToList();
+            w.ForEach(i => Console.Write($"{i:f3} "));
+
+
         }
 
         private static void TestInterpolator()
@@ -44,15 +51,15 @@ a8     `Y88 a8       8a 88P'     8a 88 88 88P'   ` 8a
  aa,    ,88                                            
    Y8bbdP";
             //Console.WriteLine(goblin);
-Interpolator.Interpolate(text, text).ForEach(Console.WriteLine);
-            var linesA = Interpolator.Escape(goblin);
-            var linesB = Interpolator.Escape(goblin);
-            Console.WriteLine($"{linesB[0]} WHY {linesA[3]}");
-            Console.WriteLine($"{linesA[1]} THE {linesB[3]}");
-            Console.WriteLine($"{linesB[2]} F {linesA[3]}");
-            Console.WriteLine($"{linesA[3]} DOESNT {linesB[3]}");
-            Console.WriteLine($"{linesB[4]} THIS {linesB[3]}");
-            Console.WriteLine($"{linesA[5]} WORK {linesA[3]}");
+            var testText = "aaaaa\nbbbbb\nccccc\nddddd"; //This works
+            var testVerbatim = @"aaaaa
+bbbbb
+ccccc
+ddddd";
+            Interpolator.Interpolate(testText, testText).ForEach(Console.WriteLine);
+            Interpolator.Interpolate(testVerbatim, testVerbatim).ForEach(Console.WriteLine); // Verbatim strings break it...
+
+            testText.Split('\n').Zip(testText.Split('\n'), (i, j) => $"{i}\t{j}").ToList().ForEach(Console.WriteLine);
 
             //lines.ForEach(Console.WriteLine);
         }

@@ -17,7 +17,17 @@ namespace linqDemo
 
         private static void Task3()
         {
-            
+            var rangeA = Enumerable.Range(0, 10);
+            var rangeB = Enumerable.Range(10, 10);
+            var union = Enumerable.Union(rangeA, rangeB);
+            union.ToList().ForEach(Console.WriteLine);
+
+            var except = Enumerable.Except(rangeA, new List<int>() { 1, 2, 3 }); //"Removes" the elements defined in the second list
+            except.ToList().ForEach(Console.WriteLine);
+
+            //var t = EnumContainer.Test.first;
+            Func<double, double, double> Multiply = (i, j) => i * j;
+            Console.WriteLine(Multiply(2, 6));
         }
 
         private static void Task1()
