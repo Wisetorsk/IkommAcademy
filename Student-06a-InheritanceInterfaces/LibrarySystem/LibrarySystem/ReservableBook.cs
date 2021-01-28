@@ -10,7 +10,7 @@ namespace LibrarySystem
     public class ReservableBook : Book, IReservable
     {
         private bool reserved;
-        public Member ReservedTo { get; set; } = null;
+        public Member[] ReservedTo { get; set; } = null;  // Dirty hack, and probably not the way it's mean to be solved
         public bool Reserved { get { return !(ReservedTo is null); } set { reserved = value;  } }
         public ReservableBook(string title, string author, int isbn, ItemGenre genre) : base(title, author, isbn, genre)
         {
@@ -26,7 +26,7 @@ namespace LibrarySystem
         {
             if (!Reserved && CurrentBorrower is null && CanBeReservedFor(member)) 
             {
-                ReservedTo = member;
+                ReservedTo[0] = member;
                 return true;
             };
             return false;
@@ -37,7 +37,7 @@ namespace LibrarySystem
             base.ReturnItem();
             if (Reserved)
             {
-                CurrentBorrower = ReservedTo;
+                CurrentBorrower = ReservedTo[0];
                 ReservedTo = null;
             }
         }
