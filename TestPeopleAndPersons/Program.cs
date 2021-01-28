@@ -1,7 +1,7 @@
 ﻿using AcademyBot.Objects;
+using IKOMM.CustomLibrary;
 using System;
 using System.Collections.Generic;
-using StringImageInterpolator;
 using System.Linq;
 
 namespace TestPeopleAndPersons

@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace StringImageInterpolator
+namespace IKOMM.CustomLibrary
 {
     public class Interpolator
     {
@@ -29,7 +30,8 @@ namespace StringImageInterpolator
             var line = "";
             foreach (var c in input)
             {
-                if (c == '\n') {
+                if (c == '\n')
+                {
                     line += " ";
                     output.Add(line);
                     line = "";

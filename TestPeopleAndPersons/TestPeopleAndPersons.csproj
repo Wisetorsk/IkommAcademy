@@ -6,8 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AcademyBot\AcademyBot.csproj" />
-    <ProjectReference Include="..\StringImageInterpolator\StringImageInterpolator.csproj" />
+    <ProjectReference Include="..\..\AcademyBot\AcademyBot.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="IKOMM.CustomLibrary">
+      <HintPath>..\IKOMM.CustomLibrary\IKOMM.CustomLibrary\bin\Debug\netstandard2.0\IKOMM.CustomLibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
