@@ -15,17 +15,16 @@ namespace FormsGraphics
 
         Pen myPen = new Pen(Color.Black);
         Graphics g = null;
-        Random r;
+        Random R;
 
-        static int centerX, centerY;
+        //static int centerX, centerY;
         static int startX, startY;
         static int endX, endY;
 
         static int myAngle = 0;
         static double myLength = 0;
         static int myNumberOfLines = 0;
-        static double myIncrement = 0;
-        static int startAngle = 0;
+        static double myIncrement;
 
 
         public Form1()
@@ -33,10 +32,10 @@ namespace FormsGraphics
             InitializeComponent();
             startX = Canvas.Width / 2;
             startY = Canvas.Height / 2;
-            r = new Random();
+            R = new Random();
         }
 
-        private void go_button_Click(object sender, EventArgs e)
+        private void Render(object sender, EventArgs e)
         {
             myLength = int.Parse(length.Text);
             myAngle = int.Parse(angle.Text);
@@ -63,7 +62,7 @@ namespace FormsGraphics
             };
             startX = endX;
             startY = endY;
-            myPen.Color = Color.FromArgb(r.Next(255), r.Next(255), r.Next(255));
+            //myPen.Color = Color.FromArgb(R.Next(255), R.Next(255), R.Next(255));
             g.DrawLines(myPen, points);
 
         }

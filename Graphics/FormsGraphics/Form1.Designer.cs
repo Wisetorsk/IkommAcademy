@@ -70,7 +70,7 @@ namespace FormsGraphics
             this.go_button.TabIndex = 8;
             this.go_button.Text = "GO!";
             this.go_button.UseVisualStyleBackColor = true;
-            this.go_button.Click += new System.EventHandler(this.go_button_Click);
+            this.go_button.Click += new System.EventHandler(this.Render);
             // 
             // increment
             // 
@@ -106,7 +106,7 @@ namespace FormsGraphics
             this.line_number.Name = "line_number";
             this.line_number.Size = new System.Drawing.Size(100, 20);
             this.line_number.TabIndex = 4;
-            this.line_number.Text = "1";
+            this.line_number.Text = "200";
             this.line_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
