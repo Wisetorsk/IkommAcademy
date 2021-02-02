@@ -1,0 +1,14 @@
+﻿@model HolidayGuru.Models.AnotherPage
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h1>This is another page</h1>
+@using (Html.BeginForm())
+{
+<p>
+    @Html.ActionLink("Go home", "Index")
+    @Html.TextBoxFor(m => m.Text)
+</p>
+<button type="submit">SEND!</button>
+}
+

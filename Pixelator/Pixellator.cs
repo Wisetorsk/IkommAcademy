@@ -70,7 +70,7 @@ namespace Pixelator
             InputImage = new Bitmap(FilePath);
             XInputResolution = InputImage.Width;
             YInputResolution = InputImage.Height;
-            var test = InputImage.GetPixel(0, 0);
+            //var test = InputImage.GetPixel(0, 0);
             Console.WriteLine($"Width: {InputImage.Width}\nHeight: {InputImage.Height}\nScaleFactor: {ScaleFactor}");
         }
 
@@ -79,10 +79,10 @@ namespace Pixelator
             var xDim = XInputResolution / ScaleFactor;
             var yDim = YInputResolution / ScaleFactor;
             ColorOutput = new List<List<Color>>();
-            for (int i = 0; i < XInputResolution; i += ScaleFactor)
+            for (int i = 0; i < XInputResolution; i++)
             {
                 var line = new List<Color>();
-                for (int j = 0; j < YInputResolution; j += ScaleFactor)
+                for (int j = 0; j < YInputResolution; j++)
                 {
                     //line.Add(AveragePixels());
                 }
@@ -119,7 +119,6 @@ namespace Pixelator
             int avgB = bSum / avgBList.Length;
             var col = Color.FromArgb(avgR, avgG, avgB);
             return col;
-
         }
 
         public List<Color> GetPixels(int xStart, int xEnd, int yStart, int yEnd)

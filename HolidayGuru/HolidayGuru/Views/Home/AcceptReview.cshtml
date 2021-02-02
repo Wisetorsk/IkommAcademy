@@ -1,0 +1,16 @@
+﻿@model HolidayGuru.Models.HolidayReview
+
+@{
+    ViewData["Title"] = "Accept Review";
+}
+
+<h3>Thanks @Model.Name!</h3>
+
+@if (Model.Rating == 5)
+{
+    <p>Great! Sounds like you loved @Model.Resort.</p>
+}
+else
+{
+    <p>Thanks, we've recorded your review of @Model.Resort.</p>
+}

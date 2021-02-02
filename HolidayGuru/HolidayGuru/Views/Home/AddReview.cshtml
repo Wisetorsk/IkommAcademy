@@ -1,0 +1,53 @@
+﻿@model HolidayGuru.Models.HolidayReview
+
+@{
+    ViewData["Title"] = "Add Review";
+}
+
+<h3>Enter Review Details</h3>
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary()
+
+    <p>
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Resort)
+        @Html.TextBoxFor(m => m.Resort)
+        @Html.ValidationMessageFor(m => m.Resort)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Comments)
+        @Html.TextAreaFor(m => m.Comments)
+        @Html.ValidationMessageFor(m => m.Comments)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.Additional)
+        @Html.TextAreaFor(m => m.Additional)
+        @Html.ValidationMessageFor(m => m.Additional)
+    </p>
+
+    <p>
+        @Html.LabelFor(m => m.Rating)
+        @Html.DropDownListFor(m => m.Rating,
+           new[] {
+                new SelectListItem { Text = "*****", Value = "5" },
+                new SelectListItem { Text = "****",  Value = "4" },
+                new SelectListItem { Text = "***",   Value = "3" },
+                new SelectListItem { Text = "**",    Value = "2" },
+                new SelectListItem { Text = "*",     Value = "1" },
+           }, 
+           "Choose a rating"
+       )
+        @Html.ValidationMessageFor(m => m.Rating)
+    </p>
+
+    <button type="submit">Submit</button>
+}
