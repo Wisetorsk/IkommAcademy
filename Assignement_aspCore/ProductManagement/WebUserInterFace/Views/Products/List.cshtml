@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Domain.Entities.Product>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@foreach (var product in Model)
+{
+    <p>
+        <h4>Product: @product.ProductName</h4>
+        In stock: @product.NumberInStock<br />
+        Unit price: $@product.UnitPrice
+    </p>
+}

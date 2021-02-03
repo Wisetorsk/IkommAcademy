@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.alive {
+
+}
+
+cell {
+    border: 1px solid black;
+}
+
+.dead {
+    background-color: black;
+}
