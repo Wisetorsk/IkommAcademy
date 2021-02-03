@@ -1,0 +1,17 @@
+﻿@model IEnumerable<FilmDemoWebApplication.Domain.Entities.Film> 
+
+@{
+    ViewBag.Title = "List of films";
+
+}
+
+@foreach (var film in Model)
+{
+    <div class="item">
+        <h4>@film.Title</h4>
+        <p>Id: @film.FilmID</p>
+        <p>Blurb: @film.Blurb</p>
+        <p>Genre: @film.Genre</p>
+        <p>Rental price: @film.RentalPrice</p>
+    </div>
+}
