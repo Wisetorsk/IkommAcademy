@@ -21,7 +21,7 @@
     FillCells() {
         for (var i = 0; i < this.xCells; i++) {
             for (var j = 0; j < this.yCells; j++) {
-                this.cells[i][j] = new Cell();
+                this.cells[i][j] = new Cell(i, j);
             }
         }
     }
@@ -31,6 +31,8 @@
             for (var cell in row) {
                 const cellElement = document.createElement('div');
                 cellElement.classList.add((cell.alive) ? "alive" : "dead", "cell");
+                cellElement.setAttribute("x", cell.x);
+                cellElement.setAttribute("y", cell.y);
                 dom.appendChild(cellElement);
             }
         }
@@ -38,10 +40,16 @@
 
     OneStep() {
         // Runs the simulation one step at a time. 
+        UpdateDivs();
     }
 
     UpdateDivs() {
         // Updates the divs on screen according to the state of the cells.
+        for (var i = 0; i < this.xCells; i++) {
+            for (var j = 0; j < this.yCells; j++) {
+                document.getElementById();
+            }
+        }
     }
 
     UpdateSingle(x, y) {
