@@ -7,8 +7,10 @@
 <link rel="stylesheet" href="~/css/gameOfLife.css" />
 <script src="~/js/Cell.js"></script>
 <script src="~/js/GameOfLife.js"></script>
+
+<div id="Game"></div>
+
 <script>
     let dom = document.getElementById("Game");
     let gameOfLife = new GameOfLife(@Model.GameCellsX, @Model.GameCellsY, @Model.Width, @Model.Height, dom);
 </script>
-<div id="Game"></div>
