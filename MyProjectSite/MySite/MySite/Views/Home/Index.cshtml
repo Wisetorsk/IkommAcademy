@@ -4,42 +4,50 @@
 }
 
 <style>
-
+    body {
+        background-image:  url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif");
+        background-repeat: no-repeat;
+        background-position-y: -50px;
+        background-size: 500px 360px;
+    }
 </style>
 <script></script>
 <div class="text-center">
     <h1 class="display-4">Conways Game of Life!</h1>
-    <div id="inputWrapper">
-        @using (Html.BeginForm())
-        {
-            @Html.ValidationSummary()
+    <div class="text-center" style="width: 800px;">
+        <div id="inputWrapper" class="text-lg-right">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
 
-            <p id="xCellEntry" class="entryField">
-                @Html.LabelFor(m => m.GameCellsX)
-                @Html.TextBoxFor(m => m.GameCellsX)
-                @Html.ValidationMessageFor(m => m.GameCellsX)
-            </p>
+                <p id="xCellEntry" class="entryField">
+                    @Html.LabelFor(m => m.GameCellsX)
+                    @Html.TextBoxFor(m => m.GameCellsX)
+                    @Html.ValidationMessageFor(m => m.GameCellsX)
+                </p>
 
-            <p id="yCellEntry" class="entryField">
-                @Html.LabelFor(m => m.GameCellsY)
-                @Html.TextBoxFor(m => m.GameCellsY)
-                @Html.ValidationMessageFor(m => m.GameCellsY)
-            </p>
+                <p id="yCellEntry" class="entryField">
+                    @Html.LabelFor(m => m.GameCellsY)
+                    @Html.TextBoxFor(m => m.GameCellsY)
+                    @Html.ValidationMessageFor(m => m.GameCellsY)
+                </p>
 
-            <p id="widthEntry" class="entryField">
-                @Html.LabelFor(m => m.Width)
-                @Html.TextBoxFor(m => m.Width)
-                @Html.ValidationMessageFor(m => m.Width)
+                <p id="widthEntry" class="entryField">
+                    @Html.LabelFor(m => m.Width)
+                    @Html.TextBoxFor(m => m.Width)
+                    @Html.ValidationMessageFor(m => m.Width)
 
-            </p>
+                </p>
 
-            <p id="heightEntry" class="entryField">
-                @Html.LabelFor(m => m.Height)
-                @Html.TextBoxFor(m => m.Height)
-                @Html.ValidationMessageFor(m => m.Height)
-            </p>
+                <p id="heightEntry" class="entryField">
+                    @Html.LabelFor(m => m.Height)
+                    @Html.TextBoxFor(m => m.Height)
+                    @Html.ValidationMessageFor(m => m.Height)
+                </p>
 
-            <button action="submit" id="startButton">Start the game of life</button>
-        }
+                <button action="submit" id="startButton">Start the game of life</button>
+            }
+        </div>
     </div>
+    
 </div>

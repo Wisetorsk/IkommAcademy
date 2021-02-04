@@ -25,7 +25,10 @@ namespace MySite.Controllers
             return View("GameOfLife", dimentions);
         }
 
-
+        public IActionResult AboutMe()
+        {
+            return View();
+        }
         public IActionResult GameOfLife() {
             return View();
         }

@@ -2,13 +2,38 @@
 }
 
 .alive {
-
-}
-
-cell {
-    border: 1px solid black;
+    background-color: black;
 }
 
 .dead {
-    background-color: black;
+    background-color: white;
+}
+
+
+.mainWrapper {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.gameWrapper {
+    grid-column: 1/4;
+}
+
+.infoPanel {
+    grid-column: 5/7;
+    border-radius: 5px;
+    background-color: paleturquoise;
+    padding: 10px;
+}
+
+button {
+    padding-left: 0.2vw;
+}
+
+button:hover {
+    filter: drop-shadow(0 0 0.5rem blue);
+}
+
+.subHeader {
+    text-decoration: underline;
 }

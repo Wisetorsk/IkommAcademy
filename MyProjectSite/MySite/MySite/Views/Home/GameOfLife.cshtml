@@ -5,12 +5,44 @@
 @{
 }
 <link rel="stylesheet" href="~/css/gameOfLife.css" />
-<script src="~/js/Cell.js"></script>
-<script src="~/js/GameOfLife.js"></script>
+<script src="~/js/Life.js"></script>
+<style>
 
-<div id="Game"></div>
+</style>
+
+<div class="mainWrapper">
+    <div id="Game" class="gameWrapper" onclick="gameOfLife.GetState()"></div>
+    <div class="infoPanel  text-lg-left">
+        <p>
+            <h4 class="text-center subHeader">Conways game of life</h4>
+            <p>
+                This is the cellular automaton known as "Conways game of life".
+                The "game" is driven by three simple rules:
+                <ol>
+                    <li>A cell will die if it has less than two neighbors.</li>
+                    <li>A cell will continue to live or come back to life if it has two or three neighbors.</li>
+                    <li>A cell will die if it has more than three neighbors</li>
+                </ol>
+            </p>
+        </p>
+
+        <button id="runButton" class="text-center" onclick="run()">RUN</button>
+    </div>
+</div>
 
 <script>
     let dom = document.getElementById("Game");
-    let gameOfLife = new GameOfLife(@Model.GameCellsX, @Model.GameCellsY, @Model.Width, @Model.Height, dom);
+    let gameOfLife;
+    let i;
+    window.onload = function () { gameOfLife = new Life(@Model.GameCellsX, @Model.GameCellsY, @Model.Width, @Model.Height, dom) }
+    function run() {
+        i = setInterval(oneCycle, 100);
+    }
+    function oneCycle() {
+        gameOfLife.OneStep();
+        gameOfLife.SetState();
+    }
+    function stop() {
+        clearInterval(i);
+    }
 </script>
