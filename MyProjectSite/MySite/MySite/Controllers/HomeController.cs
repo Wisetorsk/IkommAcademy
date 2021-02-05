@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MySite.Models;
+using MySite.Data;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,6 +13,7 @@ namespace MySite.Controllers
     public class HomeController : Controller
     {
         private Dimentions dimentions = new Dimentions();
+        private Hobby hobbies = new Hobby();
 
         [HttpGet]
         public IActionResult Index()
@@ -27,7 +29,7 @@ namespace MySite.Controllers
 
         public IActionResult AboutMe()
         {
-            return View();
+            return View(hobbies);
         }
         public IActionResult GameOfLife() {
             return View();

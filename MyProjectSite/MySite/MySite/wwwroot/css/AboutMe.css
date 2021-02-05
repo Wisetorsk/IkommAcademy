@@ -1,0 +1,43 @@
+﻿body {
+}
+
+.mainGridWrapper {
+    display: grid;
+    grid-template-areas: "leftImage rightText rightText" "leftText leftText rightImage";
+    width: 70vw;
+}
+
+.leftImageContainer {
+    grid-area: leftImage;
+}
+
+.rightTextContainer {
+    grid-area: rightText;
+}
+
+.rightImageContainer {
+    grid-area: rightImage;
+}
+
+.leftTextContainer {
+    grid-area: leftText;
+}
+
+.text {
+    width: 60vw;
+    padding-bottom: 20px;
+}
+
+.image {
+    width: 200px;
+    float: left;
+}
+
+#rImage {
+    
+}
+
+#lImage {
+    
+
+}
