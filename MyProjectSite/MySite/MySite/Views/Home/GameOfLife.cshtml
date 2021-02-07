@@ -9,7 +9,17 @@
 <style>
 
 </style>
+<div id="myModal" class="customModal">
 
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span> (The css is borked...)
+        <p>To set a cell as "alive", just click on it. When you have activated as many cells as you wish, press "RUN" and the simulation will start. </p>
+        <p>There are many configurations that will "live" and create unpredictable interactions and results. <br />
+            A example of a collection that will live and move is the "Glider"<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0zrG-JvO_R1z5YcaYPmT2ukIK1brxEA1aCQ&usqp=CAU" /></p>
+    </div>
+
+</div>
 <div class="mainWrapper">
     <div id="Game" class="gameWrapper" onclick="gameOfLife.GetState()"></div>
     <div class="infoPanel  text-lg-left">
@@ -46,3 +56,4 @@
         clearInterval(i);
     }
 </script>
+<script src="~/js/ModalsAndStuff.js"></script>
