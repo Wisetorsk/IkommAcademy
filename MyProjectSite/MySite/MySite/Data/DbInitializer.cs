@@ -15,9 +15,10 @@ namespace MySite.Data
 
             if (context.Students.Any())
             {
+                Console.WriteLine("Found an existing database!!!");
                 return; //Db set
             }
-
+            Console.WriteLine("Filling with demo data");
             var students = new Student[]
             {
                 new Student{FirstName="Marius", LastName="Kristiansen", Birthday=DateTime.Parse("1992-04-13")},

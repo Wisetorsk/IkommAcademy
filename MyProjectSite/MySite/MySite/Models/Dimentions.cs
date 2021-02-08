@@ -8,18 +8,18 @@ namespace MySite.Models
 {
     public class Dimentions : IDimentions
     {
-        [Display(Name = "Number of cells in X dimention")]
+        [Display(Name = "X Cells")]
         [Required(ErrorMessage = "Please Enter number of columns")]
         public int GameCellsX { get; set; } = 25;
 
-        [Display(Name = "Number of cells in Y dimention")]
+        [Display(Name = "Y Cells")]
         [Required(ErrorMessage = "Please Enter number of rows")]
         public int GameCellsY { get; set; } = 25;
 
-        [Display(Name = "Width of canvas in pixels")]
+        [Display(Name = "Width px")]
         public int Width { get; set; } = 600;
 
-        [Display(Name = "Height of canvas in pixels")]
+        [Display(Name = "Height px")]
         public int Height { get; set; } = 600;
     }
 }
