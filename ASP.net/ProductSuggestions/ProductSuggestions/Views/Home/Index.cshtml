@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Scripts {
+    <script src="~/js/ProductSuggestionsIndex.js"></script>
+}
+
+<fieldset>
+    <legend>All product suggestions</legend>
+    <button onclick="getAllProductSuggestions('#resultList1')">Get all</button>
+    <ul id="resultList1"></ul>
+</fieldset>
+
+<fieldset>
+    <legend>Product suggestions search</legend>
+    <input type="text" id="partialDescription" placeholder="search string" onkeyup="getProductSuggestionLike('#resultList2', '#partialDescription')" />
+    <br />
+    <ul id="resultList2"></ul>
+</fieldset>
+
+<fieldset>
+    <legend>Product suggestions by ID</legend>
+    <input type="text" id="id" placeholder="id" />
+    <button onclick="getProductSuggestionById('#resultList3', '#id')">Get</button>
+    <br />
+    <ul id="resultList3"></ul>
+</fieldset>
